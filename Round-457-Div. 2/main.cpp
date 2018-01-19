@@ -51,17 +51,15 @@ int main()
                 counter2 ++ ;
            }
             counter ++ ;
-            if (h < 0) { h = 12 - counter; counter = 0;}
+            if (flag == 1) {break;}
+            if (h < 1 && flag == 0) { h = (12 - counter)+1; counter = 0; break;}
 
         }
 
-        if (flag = 0)
-            {
 
-            }
     }
 
-
+    cout << counter2 << endl ;      // TBR
     cout << number << endl;
     return 0;
 }
