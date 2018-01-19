@@ -6,10 +6,10 @@ int main()
 {
     string x_str, h_str, m_str;
     string temp;
-//    getline (cin, x_str) ;
-//    getline(cin, temp);
-    x_str = "3";
-    temp = "11 17";
+    getline (cin, x_str) ;
+    getline(cin, temp);
+//    x_str = "3";
+//    temp = "11 17";
 
     h_str = temp.substr(0, temp.find(" "));
     m_str = temp.substr (temp.find(" ") +1, temp.length() - 1);
