@@ -18,7 +18,10 @@ int main()
     int h = stoi (h_str);
     int m = stoi (m_str);
     int number =0;
-//    cout << (x_str) ;
+    int counter = 0 ;
+    int counter2 = 1 ;
+    int flag = 0 ;
+//    cout << stoi(x_str) ;
 //    cout << to_string(x) +"lol" ;
     if (m_str[0] == '7' || m_str [1] == '7' || h_str [0] == '7' || h_str [1] == '7')
     {
@@ -26,31 +29,36 @@ int main()
     }
     else
     {
-        for (int i =0 ; i < 12 ; i++)
+        for (int i = 0 ; i < 12 ; i++)
         {
-            int counter = 0;
             for (int j = 0 ; j < 60 ; j++)
             {
-                if (m_str[0] == '7' || m_str [1] == '7' || h_str [0] == '7' || h_str [1] == '7'){number = counter2 * x ;}
-                int counter2 = 0;
                 m -= x ;
                 m_str = to_string (m);
                 if ( m > 0)
                 {
-                    if (m_str[0] == '7' || m_str [1] == '7'){return number = counter2 * x ;}
+                    if (m_str[0] == '7' || m_str [1] == '7'){number = counter2 * x ; flag = 1 ; break ; }
                     counter2 ++ ;
                 }
                 else if (m <0)
                 {
                     h -= 1 ;
-                    m = 60 - m ;
-                    if (m_str[0] == '7' || m_str [1] == '7' || h_str [0] == '7' || h_str [1] == '7'){number = counter2 * x ;}
+                    m = 60 - abs(m) ;
+                    m_str = to_string (m);
+                    h_str = to_string (h);
+                    if (m_str[0] == '7' || m_str [1] == '7' || h_str [0] == '7' || h_str [1] == '7'){number = counter2 * x ; flag = 1 ; break ;}
                 }
+                counter2 ++ ;
            }
-           counter ++ ;
-           if (h < 0) { h = 12 - counter;}
+            counter ++ ;
+            if (h < 0) { h = 12 - counter; counter = 0;}
 
         }
+
+        if (flag = 0)
+            {
+
+            }
     }
 
 
